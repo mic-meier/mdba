@@ -1,0 +1,40 @@
+{
+  "questions": [
+    [
+      {
+        "position": "1",
+        "choice": "A",
+        "statement": "Ich bin offen genug, um auf Menschen zuzugehen und persönliche Beziehungen zu ihnen aufzubauben."
+      },
+      {
+        "postition": "1",
+        "choice": "B",
+        "statement": "Ich bin nicht offen genug, um auf Menschen zuzugehen und persönliche Beziehungen zu ihnen aufzubauen"
+      }
+    ],
+    [
+      {
+        "position": "2",
+        "choice": "A",
+        "statement": "Ich reagiere langsam und bedächtig."
+      },
+      {
+        "position": "2",
+        "choice": "B",
+        "statement": "Ich reagiere schnell und spontan."
+      }
+    ],
+    [
+      {
+        "position": "3",
+        "choice": "A",
+        "statement": "Ich achte darauf, nicht zu viel Zeit ungeplant mit anderen zu verbringen"
+      },
+      {
+        "position": "3",
+        "choice": "B",
+        "statement": "Es macht mir nichts aus, meine Zeit anderen zu widmen"
+      }
+    ]
+  ]
+}
