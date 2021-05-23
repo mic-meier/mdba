@@ -1,5 +1,3 @@
-import { channel } from 'diagnostic_channel'
-
 import { Questionnaire } from './types'
 
 export const questionnaire: Questionnaire = [

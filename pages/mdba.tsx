@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import QuestionnaireForm from '../components/QuestionnaireForm'
 import { questionnaire } from '../data'
 import { Questionnaire } from '../types'
 
@@ -18,22 +19,7 @@ export default function MDBA({ questionnaire }: Props) {
       </Head>
 
       <main>
-        <div>
-          Data:
-          {questionnaire.map((questionSet) => {
-            return (
-              <div key={questionSet.set}>
-                {questionSet.choices.map((choice) => {
-                  return (
-                    <div key={choice.choice}>
-                      {`${questionSet.set}${choice.choice}`} {choice.statement}
-                    </div>
-                  )
-                })}
-              </div>
-            )
-          })}
-        </div>
+        <QuestionnaireForm questionnaire={questionnaire} />
       </main>
     </div>
   )

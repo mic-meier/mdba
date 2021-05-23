@@ -27,7 +27,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
   ],
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -38,14 +37,6 @@ module.exports = {
     'import/first': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': [0],
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: ['Link'],
-        specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton'],
-      },
-    ],
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
   plugins: [
