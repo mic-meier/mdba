@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, ReactNode, useState } from 'react'
 
 import { ChoiceSet, Questionnaire } from '../types'
 
@@ -20,10 +20,10 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
   }
 
   return (
-    <fieldset>
-      <div>
-        <label htmlFor="choiceA">
-          {`${choiceSet.set}${choiceA.choice} ${choiceA.statement}`}
+    <fieldset className="p-4 shadow-md rounded-md">
+      <div className="p-2">
+        <label htmlFor="choiceA" className="flex items-center space-x-4">
+          <div className="">{`${choiceSet.set}${choiceA.choice}`}</div>
           <select
             name={`choice${choiceA.choice}`}
             id={`choice${choiceA.choice}`}
@@ -48,11 +48,12 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
               3
             </option>
           </select>
+          <div>{`${choiceA.statement}`}</div>
         </label>
       </div>
-      <div>
-        <label htmlFor="choiceB">
-          {`${choiceSet.set}${choiceB.choice} ${choiceB.statement}`}
+      <div className="p-2">
+        <label htmlFor="choiceB" className="flex items-center space-x-4">
+          <div>{`${choiceSet.set}${choiceB.choice}`}</div>
           <select
             name={`choice${choiceB.choice}`}
             id={`choice${choiceB.choice}`}
@@ -77,6 +78,7 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
               3
             </option>
           </select>
+          <div>{`${choiceB.statement}`}</div>
         </label>
       </div>
     </fieldset>
@@ -85,6 +87,12 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
 
 export default function QuestionnaireForm({ questionnaire }: Props) {
   const [formState, setFormState] = useState({})
+  const isFormValid = Object.keys(formState).length === 18
+
+  function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+    console.log(formState)
+  }
 
   function handleChange(set: number, valueA: number, valueB: number) {
     setFormState({
@@ -97,7 +105,7 @@ export default function QuestionnaireForm({ questionnaire }: Props) {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-4">
       {questionnaire.map((choiceSet) => (
         <FormFieldSet
           key={choiceSet.set}
@@ -106,6 +114,9 @@ export default function QuestionnaireForm({ questionnaire }: Props) {
           handleChange={handleChange}
         />
       ))}
+      <button disabled={!isFormValid} type="submit">
+        Submit
+      </button>
     </form>
   )
 }

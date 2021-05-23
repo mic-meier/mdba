@@ -18,7 +18,24 @@ export default function MDBA({ questionnaire }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="max-w-6xl mx-auto">
+        <h1 className="text-center text-6xl font-bold text-purple-700 pt-10">
+          Verhaltensanalyse
+        </h1>
+        <div className="py-10 max-w-2xl mx-auto space-y-2">
+          <p>
+            {' '}
+            Im folgenden Fragebogen sollst du angeben, wie du dich normalerweise
+            in Alltagssituationen verhältst. Aus der Auswertung ergibt sich ein
+            klares Bild wie du dich selbst siehst.
+          </p>
+          <p>
+            Bewerte jedes Paar der Aussagen A und B mit insgesamt drei Punkten,
+            je nachdem, wie zutreffend die Aussage ist. Auch wenn du glaubst,
+            dass manche Aussagenpaare gleichermassen zutreffen, solltest du der
+            Alternative mehr Punkte geben, die für dein Verhalten typischer ist.
+          </p>
+        </div>
         <QuestionnaireForm questionnaire={questionnaire} />
       </main>
     </div>
