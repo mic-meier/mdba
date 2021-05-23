@@ -20,7 +20,11 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
   }
 
   return (
-    <fieldset className="p-4 shadow-md rounded-md">
+    <fieldset
+      className={`p-4 shadow-md rounded-md border-l-4 ${
+        valueA + valueB === 3 ? 'border-green-500' : 'border-purple-700'
+      }`}
+    >
       <div className="p-2">
         <label htmlFor="choiceA" className="flex items-center space-x-4">
           <div className="">{`${choiceSet.set}${choiceA.choice}`}</div>
@@ -91,6 +95,7 @@ export default function QuestionnaireForm({ questionnaire }: Props) {
 
   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
+    setFormState({})
     console.log(formState)
   }
 
@@ -114,7 +119,13 @@ export default function QuestionnaireForm({ questionnaire }: Props) {
           handleChange={handleChange}
         />
       ))}
-      <button disabled={!isFormValid} type="submit">
+      <button
+        disabled={!isFormValid}
+        type="submit"
+        className={`py-1 px-2 rounded-md text-white font-semibold uppercase ${
+          isFormValid ? 'bg-green-500' : 'bg-purple-700 '
+        }`}
+      >
         Submit
       </button>
     </form>
