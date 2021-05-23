@@ -1,9 +1,16 @@
-import { ChangeEvent, ReactNode, useState } from 'react'
+import {
+  ChangeEvent,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from 'react'
 
 import { ChoiceSet, Questionnaire } from '../types'
 
 type Props = {
   questionnaire: Questionnaire
+  setIsFormSubmitted: Dispatch<SetStateAction<boolean>>
 }
 
 type FieldsetProps = {
@@ -89,13 +96,17 @@ function FormFieldSet({ choiceSet, formState, handleChange }: FieldsetProps) {
   )
 }
 
-export default function QuestionnaireForm({ questionnaire }: Props) {
+export default function QuestionnaireForm({
+  questionnaire,
+  setIsFormSubmitted,
+}: Props) {
   const [formState, setFormState] = useState({})
   const isFormValid = Object.keys(formState).length === 18
 
   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
     setFormState({})
+    setIsFormSubmitted(true)
     console.log(formState)
   }
 
