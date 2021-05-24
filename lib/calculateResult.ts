@@ -31,7 +31,7 @@ const distribution = {
 
 //TODO: Add type for data
 
-export function calculateResult(data) {
+export function calculateResult(data: { [x: string]: { [x: string]: any } }) {
   for (const choice in data) {
     for (const result in data[choice]) {
       const answer = data[choice][result]
