@@ -15,7 +15,7 @@ type Result = {
   characteristic: 'O' | 'I' | 'R' | 'D'
 }
 
-type SubmitResult = {
+export type SubmitResult = {
   x: number
   y: number
 }[]

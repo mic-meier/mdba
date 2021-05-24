@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 import QuestionnaireForm from '../components/QuestionnaireForm'
+import { SubmitResult } from '../components/QuestionnaireForm'
 import ScatterChart from '../components/ScatterChart'
 import { questionnaire } from '../data'
 import { Questionnaire } from '../types'
@@ -12,7 +13,7 @@ type Props = {
 
 export default function Home({ questionnaire }: Props) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState<SubmitResult | []>([])
 
   return (
     <div className="p-4">
