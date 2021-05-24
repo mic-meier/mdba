@@ -7,13 +7,18 @@ import FormFieldSet from './FormFieldSet'
 type Props = {
   questionnaire: Questionnaire
   setIsFormSubmitted: Dispatch<SetStateAction<boolean>>
-  submitResult: Dispatch<SetStateAction<never[]>>
+  submitResult: Dispatch<SetStateAction<SubmitResult>>
 }
 
 type Result = {
   value: number
   characteristic: 'O' | 'I' | 'R' | 'D'
 }
+
+type SubmitResult = {
+  x: number
+  y: number
+}[]
 
 export default function QuestionnaireForm({
   questionnaire,

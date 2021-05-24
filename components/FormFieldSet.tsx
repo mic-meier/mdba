@@ -12,8 +12,10 @@ export default function FormFieldSet({
   handleChange,
 }: FieldsetProps) {
   const [choiceA, choiceB] = choiceSet.choices
-  const valueA = formState[choiceSet.set]?.valueA.value || { valueA: 0 }
-  const valueB = formState[choiceSet.set]?.valueB.value || { valueB: 0 }
+  const valueA = formState[choiceSet.set]?.valueA.value || 0
+  const valueB = formState[choiceSet.set]?.valueB.value || 0
+
+  console.log(valueA, valueB)
 
   return (
     <fieldset

@@ -28,8 +28,18 @@ export default function MDBA({ questionnaire }: Props) {
         </h1>
         {isFormSubmitted ? (
           <div>
+            <h2 className="text-center text-2xl font-bold text-purple-700 pt-10 pb-10">
+              Dein Resultat
+            </h2>
             <ScatterChart dataPoints={result} />
-            <button onClick={() => setIsFormSubmitted(false)}>Try Again</button>
+            <div className="p-4 max-w-2xl mx-auto text-center">
+              <button
+                className="py-1 px-2 rounded-md text-white font-semibold uppercase bg-green-500"
+                onClick={() => setIsFormSubmitted(false)}
+              >
+                Nochmals!
+              </button>
+            </div>
           </div>
         ) : (
           <>
