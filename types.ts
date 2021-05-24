@@ -10,3 +10,7 @@ export type ChoiceSet = {
 }
 
 export type Questionnaire = ChoiceSet[]
+
+export type IndexProps = {
+  questionnaire: Questionnaire
+}

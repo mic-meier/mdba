@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 import QuestionnaireForm from '../components/QuestionnaireForm'
+import ScatterChart from '../components/ScatterChart'
 import { questionnaire } from '../data'
 import { Questionnaire } from '../types'
 
@@ -10,8 +11,8 @@ type Props = {
 }
 
 export default function MDBA({ questionnaire }: Props) {
-  console.log(`questionnaire`, questionnaire)
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [result, setResult] = useState([])
 
   return (
     <div className="p-4">
@@ -27,7 +28,7 @@ export default function MDBA({ questionnaire }: Props) {
         </h1>
         {isFormSubmitted ? (
           <div>
-            <div>Result</div>
+            <ScatterChart dataPoints={result} />
             <button onClick={() => setIsFormSubmitted(false)}>Try Again</button>
           </div>
         ) : (
@@ -51,6 +52,7 @@ export default function MDBA({ questionnaire }: Props) {
             <QuestionnaireForm
               questionnaire={questionnaire}
               setIsFormSubmitted={setIsFormSubmitted}
+              submitResult={setResult}
             />
           </>
         )}
