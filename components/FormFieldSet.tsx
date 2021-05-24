@@ -12,8 +12,8 @@ export default function FormFieldSet({
   handleChange,
 }: FieldsetProps) {
   const [choiceA, choiceB] = choiceSet.choices
-  const { valueA } = formState[choiceSet.set]?.valueA || { valueA: 0 }
-  const { valueB } = formState[choiceSet.set]?.valueB || { valueB: 0 }
+  const valueA = formState[choiceSet.set]?.valueA.value || { valueA: 0 }
+  const valueB = formState[choiceSet.set]?.valueB.value || { valueB: 0 }
 
   return (
     <fieldset
@@ -31,11 +31,11 @@ export default function FormFieldSet({
               handleChange(
                 choiceSet.set,
                 {
-                  valueA: parseInt(e.target.value),
+                  value: parseInt(e.target.value),
                   characteristic: choiceSet.choices[0].characteristic,
                 },
                 {
-                  valueB: 3 - parseInt(e.target.value),
+                  value: 3 - parseInt(e.target.value),
                   characteristic: choiceSet.choices[1].characteristic,
                 }
               )
@@ -67,11 +67,11 @@ export default function FormFieldSet({
               handleChange(
                 choiceSet.set,
                 {
-                  valueA: 3 - parseInt(e.target.value),
+                  value: 3 - parseInt(e.target.value),
                   characteristic: choiceSet.choices[0].characteristic,
                 },
                 {
-                  valueB: parseInt(e.target.value),
+                  value: parseInt(e.target.value),
                   characteristic: choiceSet.choices[1].characteristic,
                 }
               )
