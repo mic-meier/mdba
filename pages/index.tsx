@@ -10,7 +10,7 @@ type Props = {
   questionnaire: Questionnaire
 }
 
-export default function MDBA({ questionnaire }: Props) {
+export default function Home({ questionnaire }: Props) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [result, setResult] = useState([])
 
