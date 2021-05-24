@@ -2,6 +2,25 @@ import Head from 'next/head'
 
 import ScatterChart from '../components/ScatterChart'
 
+const data = [
+  {
+    x: -10,
+    y: 0,
+  },
+  {
+    x: 0,
+    y: 10,
+  },
+  {
+    x: 10,
+    y: 5,
+  },
+  {
+    x: 0.5,
+    y: -5.5,
+  },
+]
+
 export default function Home() {
   return (
     <div>
@@ -12,7 +31,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <ScatterChart />
+        <ScatterChart dataPoints={data} />
       </main>
     </div>
   )

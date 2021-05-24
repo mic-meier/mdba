@@ -1,31 +1,5 @@
 import { Scatter } from 'react-chartjs-2'
 
-const data = {
-  datasets: [
-    {
-      data: [
-        {
-          x: -10,
-          y: 0,
-        },
-        {
-          x: 0,
-          y: 10,
-        },
-        {
-          x: 10,
-          y: 5,
-        },
-        {
-          x: 0.5,
-          y: -5.5,
-        },
-      ],
-      backgroundColor: 'rgb(255, 99, 132)',
-    },
-  ],
-}
-
 const options = {
   plugins: {
     legend: {
@@ -44,23 +18,39 @@ const options = {
   },
 }
 
-export default function ScatterChart() {
+type Props = {
+  dataPoints: {
+    x: number
+    y: number
+  }[]
+}
+
+export default function ScatterChart({ dataPoints }: Props) {
+  const data = {
+    datasets: [
+      {
+        data: dataPoints,
+        backgroundColor: 'rgb(255, 99, 132)',
+      },
+    ],
+  }
+
   return (
-    <div className="flex items-center max-w-6xl mx-auto">
-      <div className="text-right flex-grow align-middle pb-4">
+    <div className="flex items-center max-w-md sm:max-w-6xl mx-auto">
+      <div className="text-center align-middle pb-4 flex-grow origin-left-top transform -rotate-90">
         <span className="uppercase">Indirekt</span>
       </div>
-      <div>
+      <div className="w-10/12">
         <div className="p-2 flex space-x-2">
-          <div className="flex-grow ">
+          <div className="w-2/6 ">
             <span className="px-2 py-1 rounded-md bg-indigo-400 uppercase text-white font-semibold">
               Analytiker
             </span>
           </div>
-          <div className="flex-grow text-center">
-            <span className="px-2 py-1 uppercase ">Reserviert</span>
+          <div className="text-center w-10/12">
+            <span className="px-2 py-1 uppercase">Reserviert</span>
           </div>
-          <div className="flex-grow text-right">
+          <div className="text-right w-2/6">
             <span className="px-2 py-1 rounded-md bg-red-400 uppercase text-white font-semibold">
               Macher
             </span>
@@ -70,22 +60,22 @@ export default function ScatterChart() {
           <Scatter data={data} type="scatter" options={options} />
         </div>
         <div className="p-2 flex space-x-2">
-          <div className="flex-grow ">
+          <div className="w-1/3">
             <span className="px-2 py-1 rounded-md bg-green-400 uppercase text-white font-semibold">
               Bez.mensch
             </span>
           </div>
-          <div className="flex-grow text-center">
+          <div className="w-1/3 text-center">
             <span className="px-2 py-1 uppercase ">Offen</span>
           </div>
-          <div className="flex-grow  text-right">
+          <div className="w-1/3 text-right">
             <span className="px-2 py-1 rounded-md bg-yellow-400 uppercase text-white font-semibold">
               Dynamiker
             </span>
           </div>
         </div>
       </div>
-      <div className="flex-grow align-middle pb-4">
+      <div className="text-center align-middle pb-4 flex-grow origin-left-top transform rotate-90">
         <span className="uppercase">Direkt</span>
       </div>
     </div>
