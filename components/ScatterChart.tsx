@@ -1,6 +1,7 @@
 import { Scatter } from 'react-chartjs-2'
 
 const options = {
+  aspectRatio: 1,
   plugins: {
     legend: {
       display: false,
@@ -8,12 +9,20 @@ const options = {
   },
   scales: {
     x: {
-      min: -27,
-      max: 27,
+      min: -30,
+      max: 30,
+      position: 'center',
+      grid: {
+        borderWidth: 2,
+      },
     },
     y: {
-      min: -27,
-      max: 27,
+      min: -30,
+      max: 30,
+      position: 'center',
+      grid: {
+        borderWidth: 2,
+      },
     },
   },
 }
@@ -36,7 +45,7 @@ export default function ScatterChart({ dataPoints }: Props) {
   }
 
   return (
-    <div className="flex items-center max-w-md sm:max-w-6xl mx-auto">
+    <div className="flex items-center max-w-md lg:max-w-4xl mx-auto">
       <div className="text-center align-middle pb-4 flex-grow origin-left-top transform -rotate-90">
         <span className="uppercase">Indirekt</span>
       </div>
