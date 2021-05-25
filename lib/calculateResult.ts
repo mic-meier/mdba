@@ -1,21 +1,4 @@
-// const data = {
-//   1: {
-//     valueA: { characteristic: 'O', value: 2 },
-//     valueB: { characteristic: 'R', value: 1 },
-//   },
-//   2: {
-//     valueA: { characteristic: 'I', value: 3 },
-//     valueB: { characteristic: 'D', value: 0 },
-//   },
-//   3: {
-//     valueA: { characteristic: 'R', value: 0 },
-//     valueB: { characteristic: 'O', value: 3 },
-//   },
-//   4: {
-//     valueA: { characteristic: 'D', value: 1 },
-//     valueB: { characteristic: 'I', value: 2 },
-//   },
-// }
+import { FormState } from '../types'
 
 const returnResult = {
   x: 0,
@@ -29,12 +12,14 @@ const distribution = {
   I: 0,
 }
 
-//TODO: Add type for data
-
-export function calculateResult(data: { [x: string]: { [x: string]: any } }) {
+export function calculateResult(data: FormState) {
   for (const choice in data) {
-    for (const result in data[choice]) {
-      const answer = data[choice][result]
+    const answerSet = data[choice]
+
+    let a: keyof typeof answerSet
+
+    for (a in answerSet) {
+      const answer = answerSet[a]
       if (answer.characteristic === 'R') {
         distribution.R += answer.value
       }

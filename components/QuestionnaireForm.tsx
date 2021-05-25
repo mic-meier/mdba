@@ -1,7 +1,7 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 
 import { calculateResult } from '../lib/calculateResult'
-import { Questionnaire } from '../types'
+import { Characteristic, FormState, Questionnaire } from '../types'
 import FormFieldSet from './FormFieldSet'
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 
 type Result = {
   value: number
-  characteristic: 'O' | 'I' | 'R' | 'D'
+  characteristic: Characteristic
 }
 
 export type SubmitResult = {
@@ -25,7 +25,7 @@ export default function QuestionnaireForm({
   setIsFormSubmitted,
   submitResult,
 }: Props) {
-  const [formState, setFormState] = useState({})
+  const [formState, setFormState] = useState<FormState>({})
   const isFormValid = Object.keys(formState).length === 18
 
   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
