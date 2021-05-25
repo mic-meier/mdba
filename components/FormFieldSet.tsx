@@ -1,8 +1,8 @@
-import { ChoiceSet } from '../types'
+import { ChoiceSet, FormState } from '../types'
 
 type FieldsetProps = {
   choiceSet: ChoiceSet
-  formState: any // TODO: define type
+  formState: FormState
   handleChange: any // TODO> define type
 }
 
@@ -14,8 +14,6 @@ export default function FormFieldSet({
   const [choiceA, choiceB] = choiceSet.choices
   const valueA = formState[choiceSet.set]?.valueA.value || 0
   const valueB = formState[choiceSet.set]?.valueB.value || 0
-
-  console.log(valueA, valueB)
 
   return (
     <fieldset
