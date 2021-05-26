@@ -1,24 +1,20 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 
-import { calculateResult } from '../lib/calculateResult'
+import { AnalysisResult, calculateAnalysisResult } from '../lib/calculateResult'
 import { Characteristic, FormState, Questionnaire } from '../types'
 import FormFieldSet from './FormFieldSet'
 
-type Props = {
+interface Props {
   questionnaire: Questionnaire
   setIsFormSubmitted: Dispatch<SetStateAction<boolean>>
-  submitResult: Dispatch<SetStateAction<SubmitResult>>
+  submitResult: Dispatch<SetStateAction<AnalysisResult>>
+  resultState: AnalysisResult
 }
 
-type Result = {
+interface Result {
   value: number
   characteristic: Characteristic
 }
-
-export type SubmitResult = {
-  x: number
-  y: number
-}[]
 
 export default function QuestionnaireForm({
   questionnaire,
@@ -30,9 +26,12 @@ export default function QuestionnaireForm({
 
   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
-    setFormState({})
+    const analysisResult = calculateAnalysisResult(formState)
+    console.log(`analysisResult`, analysisResult)
+    submitResult((resultState) => {
+      return { ...resultState, ...analysisResult }
+    })
     setIsFormSubmitted(true)
-    submitResult(calculateResult(formState))
   }
 
   function handleChange(set: number, valueA: Result, valueB: Result) {

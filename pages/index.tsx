@@ -2,9 +2,9 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 import QuestionnaireForm from '../components/QuestionnaireForm'
-import { SubmitResult } from '../components/QuestionnaireForm'
 import ScatterChart from '../components/ScatterChart'
 import { questionnaire } from '../data'
+import { AnalysisResult } from '../lib/calculateResult'
 import { Questionnaire } from '../types'
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 export default function Home({ questionnaire }: Props) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [result, setResult] = useState<SubmitResult | []>([])
+  const [resultState, setResultState] = useState<AnalysisResult>({ x: 0, y: 0 })
 
   return (
     <div className="p-4">
@@ -32,7 +32,7 @@ export default function Home({ questionnaire }: Props) {
             <h2 className="text-center text-2xl font-bold text-purple-700 pt-10 pb-10">
               Dein Resultat
             </h2>
-            <ScatterChart dataPoints={result} />
+            <ScatterChart dataPoints={resultState} />
             <div className="p-4 max-w-2xl mx-auto text-center">
               <button
                 className="py-1 px-2 rounded-md text-white font-semibold uppercase bg-green-500"
@@ -63,7 +63,8 @@ export default function Home({ questionnaire }: Props) {
             <QuestionnaireForm
               questionnaire={questionnaire}
               setIsFormSubmitted={setIsFormSubmitted}
-              submitResult={setResult}
+              submitResult={setResultState}
+              resultState={resultState}
             />
           </>
         )}

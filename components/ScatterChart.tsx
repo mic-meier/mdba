@@ -27,18 +27,18 @@ const options = {
   },
 }
 
-type Props = {
+interface Props {
   dataPoints: {
     x: number
     y: number
-  }[]
+  }
 }
 
 export default function ScatterChart({ dataPoints }: Props) {
   const data = {
     datasets: [
       {
-        data: dataPoints,
+        data: [dataPoints],
         backgroundColor: 'rgb(255, 99, 132)',
       },
     ],

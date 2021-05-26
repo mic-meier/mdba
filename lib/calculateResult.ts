@@ -1,18 +1,22 @@
 import { FormState } from '../types'
 
-const returnResult = {
-  x: 0,
-  y: 0,
+export interface AnalysisResult {
+  x: number
+  y: number
 }
 
-const distribution = {
-  R: 0,
-  O: 0,
-  D: 0,
-  I: 0,
-}
+export function calculateAnalysisResult(data: FormState): AnalysisResult {
+  const returnResult = {
+    x: 0,
+    y: 0,
+  }
+  const distribution = {
+    R: 0,
+    O: 0,
+    D: 0,
+    I: 0,
+  }
 
-export function calculateResult(data: FormState) {
   for (const choice in data) {
     const answerSet = data[choice]
 
@@ -44,5 +48,5 @@ export function calculateResult(data: FormState) {
   } else if (distribution.D < distribution.I) {
     returnResult.x -= distribution.I
   }
-  return [returnResult]
+  return returnResult
 }

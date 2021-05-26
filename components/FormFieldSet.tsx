@@ -1,6 +1,6 @@
 import { ChoiceSet, FormState } from '../types'
 
-type FieldsetProps = {
+interface FieldsetProps {
   choiceSet: ChoiceSet
   formState: FormState
   handleChange: any // TODO> define type
