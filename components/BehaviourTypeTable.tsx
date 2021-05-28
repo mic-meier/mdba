@@ -1,90 +1,112 @@
 export default function BehaviourTypeTable() {
   return (
-    <table>
-      <tr>
-        <th></th>
-        <th>Macher</th>
-        <th>Dynamiker</th>
-        <th>Beziehungsmensch</th>
-        <th>Analytiker</th>
-      </tr>
-      <tr>
-        <td>Verhalten unter Druck..</td>
-        <td>autokratisch</td>
-        <td>angreifend</td>
-        <td>nachgebend</td>
-        <td>ausweichend</td>
-      </tr>
-      <tr>
-        <td>Ist...</td>
-        <td>wirksam</td>
-        <td>anregend</td>
-        <td>angenehm</td>
-        <td>präzise</td>
-      </tr>
-      <tr>
-        <td>Strebt nach...</td>
-        <td>Macht</td>
-        <td>Anerkennung</td>
-        <td>Zustimmung</td>
-        <td>Respekt</td>
-      </tr>
-      <tr>
-        <td>Ist glücklich über...</td>
-        <td>Unabhängigkeit</td>
-        <td>Applaus</td>
-        <td>Konsens</td>
-        <td>Logik</td>
-      </tr>
-      <tr>
-        <td>Will gelobt werden für...</td>
-        <td>Zielerreichung</td>
-        <td>Bewunderung andrer</td>
-        <td>Atmosphäre</td>
-        <td>Detailtreue</td>
-      </tr>
-      <tr>
-        <td>Stärke...</td>
-        <td>Durchsetzung</td>
-        <td>Begeisterung</td>
-        <td>Unterstützung</td>
-        <td>Systematik</td>
-      </tr>
-      <tr>
-        <td>Hasst...</td>
-        <td>Unklarheit</td>
-        <td>Gleichförmigkeit</td>
-        <td>Konflikt</td>
-        <td>Unordnung</td>
-      </tr>
-      <tr>
-        <td>Benötigt...</td>
-        <td>Freiheit</td>
-        <td>Anreiz</td>
-        <td>Wärme</td>
-        <td>Klarheit</td>
-      </tr>
-      <tr>
-        <td>Spart gerne an...</td>
-        <td>Zeit</td>
-        <td>Analyse/Details</td>
-        <td>Kritik</td>
-        <td>Worte</td>
-      </tr>
-      <tr>
-        <td>Braucht zur Entscheidung...</td>
-        <td>Optionen</td>
-        <td>Vorbilder</td>
-        <td>Garantien</td>
-        <td>Beweise</td>
-      </tr>
-      <tr>
-        <td>Muss noch lernen...</td>
-        <td>zuhören</td>
-        <td>abwägen</td>
-        <td>initieren</td>
-        <td>entscheiden</td>
-      </tr>
-    </table>
+    <div className="bg-white shadow-md rounded my-6">
+      <table className="min-w-max w-full table-auto">
+        <thead>
+          <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th></th>
+            <th className="py-3 px-6 text-center">Macher</th>
+            <th className="py-3 px-6 text-center">Dynamiker</th>
+            <th className="py-3 px-6 text-center">Beziehungsmensch</th>
+            <th className="py-3 px-6 text-center">Analytiker</th>
+          </tr>
+        </thead>
+        <tbody className="text-gray-600 text-sm font-light">
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Verhalten unter Druck..
+            </td>
+            <td className="py-3 px-6 text-center">autokratisch</td>
+            <td className="py-3 px-6 text-center">angreifend</td>
+            <td className="py-3 px-6 text-center">nachgebend</td>
+            <td className="py-3 px-6 text-center">ausweichend</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <td className="py-3 px-6 text-left whitespace-nowrap">Ist...</td>
+            <td className="py-3 px-6 text-center">wirksam</td>
+            <td className="py-3 px-6 text-center">anregend</td>
+            <td className="py-3 px-6 text-center">angenehm</td>
+            <td className="py-3 px-6 text-center">präzise</td>
+          </tr>
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Strebt nach...
+            </td>
+            <td className="py-3 px-6 text-center">Macht</td>
+            <td className="py-3 px-6 text-center">Anerkennung</td>
+            <td className="py-3 px-6 text-center">Zustimmung</td>
+            <td className="py-3 px-6 text-center">Respekt</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Ist glücklich über...
+            </td>
+            <td className="py-3 px-6 text-center">Unabhängigkeit</td>
+            <td className="py-3 px-6 text-center">Applaus</td>
+            <td className="py-3 px-6 text-center">Konsens</td>
+            <td className="py-3 px-6 text-center">Logik</td>
+          </tr>
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Will gelobt werden für...
+            </td>
+            <td className="py-3 px-6 text-center">Zielerreichung</td>
+            <td className="py-3 px-6 text-center">Bewunderung andrer</td>
+            <td className="py-3 px-6 text-center">Atmosphäre</td>
+            <td className="py-3 px-6 text-center">Detailtreue</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <td className="py-3 px-6 text-left whitespace-nowrap">Stärke...</td>
+            <td className="py-3 px-6 text-center">Durchsetzung</td>
+            <td className="py-3 px-6 text-center">Begeisterung</td>
+            <td className="py-3 px-6 text-center">Unterstützung</td>
+            <td className="py-3 px-6 text-center">Systematik</td>
+          </tr>
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">Hasst...</td>
+            <td className="py-3 px-6 text-center">Unklarheit</td>
+            <td className="py-3 px-6 text-center">Gleichförmigkeit</td>
+            <td className="py-3 px-6 text-center">Konflikt</td>
+            <td className="py-3 px-6 text-center">Unordnung</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Benötigt...
+            </td>
+            <td className="py-3 px-6 text-center">Freiheit</td>
+            <td className="py-3 px-6 text-center">Anreiz</td>
+            <td className="py-3 px-6 text-center">Wärme</td>
+            <td className="py-3 px-6 text-center">Klarheit</td>
+          </tr>
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Spart gerne an...
+            </td>
+            <td className="py-3 px-6 text-center">Zeit</td>
+            <td className="py-3 px-6 text-center">Analyse/Details</td>
+            <td className="py-3 px-6 text-center">Kritik</td>
+            <td className="py-3 px-6 text-center">Worte</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Braucht zur Entscheidung...
+            </td>
+            <td className="py-3 px-6 text-center">Optionen</td>
+            <td className="py-3 px-6 text-center">Vorbilder</td>
+            <td className="py-3 px-6 text-center">Garantien</td>
+            <td className="py-3 px-6 text-center">Beweise</td>
+          </tr>
+          <tr className="border-b border-gray-200">
+            <td className="py-3 px-6 text-left whitespace-nowrap">
+              Muss noch lernen...
+            </td>
+            <td className="py-3 px-6 text-center">zuhören</td>
+            <td className="py-3 px-6 text-center">abwägen</td>
+            <td className="py-3 px-6 text-center">initieren</td>
+            <td className="py-3 px-6 text-center">entscheiden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   )
 }
