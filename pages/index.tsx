@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { useState } from 'react'
 
+import BehaviourTypeTable from '../components/BehaviourTypeTable'
 import QuestionnaireForm from '../components/QuestionnaireForm'
 import ScatterChart from '../components/ScatterChart'
-import { questionnaire } from '../data'
+import { behaviourTypes, questionnaire } from '../data'
 import { AnalysisResult } from '../lib/calculateResult'
 import { Questionnaire } from '../types'
 
@@ -14,6 +15,7 @@ type Props = {
 export default function Home({ questionnaire }: Props) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [resultState, setResultState] = useState<AnalysisResult>({ x: 0, y: 0 })
+  const [showTypes, setShowTypes] = useState(false)
 
   return (
     <div className="p-4">
@@ -59,6 +61,17 @@ export default function Home({ questionnaire }: Props) {
                 solltest du der Alternative mehr Punkte geben, die für dein
                 Verhalten typischer ist.
               </p>
+              <div className="py-4">
+                <button
+                  onClick={() => setShowTypes(!showTypes)}
+                  className="py-1 px-2 rounded-md text-white font-semibold uppercase bg-green-500"
+                >
+                  {showTypes ? 'Typen ausblenden' : 'Zeige Typen'}
+                </button>
+                {showTypes ? (
+                  <BehaviourTypeTable behaviourTypes={behaviourTypes} />
+                ) : null}
+              </div>
             </div>
             <QuestionnaireForm
               questionnaire={questionnaire}
@@ -74,5 +87,5 @@ export default function Home({ questionnaire }: Props) {
 }
 
 export async function getStaticProps() {
-  return { props: { questionnaire } }
+  return { props: { questionnaire, behaviourTypes } }
 }
