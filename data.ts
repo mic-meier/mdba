@@ -1,4 +1,4 @@
-import { Questionnaire } from './types'
+import { BehaviourType, Questionnaire } from './types'
 
 export const questionnaire: Questionnaire = [
   {
@@ -307,5 +307,64 @@ export const questionnaire: Questionnaire = [
         characteristic: 'D',
       },
     ],
+  },
+]
+
+export const behaviourTypes: BehaviourType[] = [
+  {
+    name: 'Macher',
+    underPressure: 'autokratisch',
+    is: 'wirksam',
+    strivesFor: 'Macht',
+    habbyAbout: 'Unabhängigkeit',
+    wantsPraiseFor: 'Zielerreichung',
+    strength: 'Durchsetzung',
+    hates: 'Unklarheit',
+    needs: 'Freiheit',
+    conserves: 'Zeit',
+    needsForDecision: 'Optionen',
+    needsToLearn: 'zuhören',
+  },
+  {
+    name: 'Dynamiker',
+    underPressure: 'angreifend',
+    is: 'anregend',
+    strivesFor: 'Anerkennung',
+    habbyAbout: 'Applaus',
+    wantsPraiseFor: 'Bewunderung anderer',
+    strength: 'Begeisterung',
+    hates: 'Gleichförmigkeit',
+    needs: 'Anreiz',
+    conserves: 'Analyse/Details',
+    needsForDecision: 'Vorbilder',
+    needsToLearn: 'abwägen',
+  },
+  {
+    name: 'Beziehungsmensch',
+    underPressure: 'nachgebend',
+    is: 'angenehm',
+    strivesFor: 'Zustimmung',
+    habbyAbout: 'Konsens',
+    wantsPraiseFor: 'Atmosphäre',
+    strength: 'Unterstützung',
+    hates: 'Konflikt',
+    needs: 'Wärme',
+    conserves: 'Kritik',
+    needsForDecision: 'Garantien',
+    needsToLearn: 'initiieren',
+  },
+  {
+    name: 'Analytiker',
+    underPressure: 'ausweichend',
+    is: 'präzise',
+    strivesFor: 'Respekt',
+    habbyAbout: 'Logik',
+    wantsPraiseFor: 'Detailtreue',
+    strength: 'Systematik',
+    hates: 'Unordnung',
+    needs: 'Klarheit',
+    conserves: 'Worte',
+    needsForDecision: 'Beweise',
+    needsToLearn: 'entscheiden',
   },
 ]

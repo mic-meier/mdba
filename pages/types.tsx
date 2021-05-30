@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import BehaviourTypeTable from '../components/BehaviourTypeTable'
+import { behaviourTypes } from '../data'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className="max-w-6xl mx-auto">
-        <BehaviourTypeTable />
+        <BehaviourTypeTable behaviourTypes={behaviourTypes} />
       </main>
     </div>
   )
