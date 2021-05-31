@@ -68,11 +68,11 @@ export default function Home({ questionnaire }: Props) {
                 >
                   {showTypes ? 'Typen ausblenden' : 'Zeige Typen'}
                 </button>
-                {showTypes ? (
-                  <BehaviourTypeTable behaviourTypes={behaviourTypes} />
-                ) : null}
               </div>
             </div>
+            {showTypes ? (
+              <BehaviourTypeTable behaviourTypes={behaviourTypes} />
+            ) : null}
             <QuestionnaireForm
               questionnaire={questionnaire}
               setIsFormSubmitted={setIsFormSubmitted}
